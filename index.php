@@ -3,8 +3,9 @@
     <title>PHP Test</title>
   </head>
   <body>
-    <?php if ($_SERVER['REQUEST_METHOD'] === "GET"){ ?>
-    <form action="index.php" method="POST" >
+  <?php
+    if ($_SERVER['REQUEST_METHOD'] === "GET") {
+      echo '<form action="index.php" method="POST" >
       Name <input id="name" name="name" value="Anonimous" />
       <br>
       E-mail: <input id="email" name="email" />
@@ -12,11 +13,10 @@
       Password <input id="pass" name="pass" type="password" />
       <br> 
       <input type="submit">
-    </form>
-    <?php
+    </form>';
     }
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $name = $_POST['name'];
       $email = $_POST['email'];
       $pass = $_POST['pass'];
@@ -35,6 +35,6 @@
         echo '<p>' . "Поля не были заполнены", $pass . '</p>';
       }
     }
-    ?>
+  ?>
   </body>
 </html>
